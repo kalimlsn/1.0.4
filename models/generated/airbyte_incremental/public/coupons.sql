@@ -46,4 +46,3 @@ from {{ ref('coupons_scd') }}
 where 1 = 1
 and _airbyte_active_row = 1
 {{ incremental_clause('_airbyte_emitted_at', this) }}
-
