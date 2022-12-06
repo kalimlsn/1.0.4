@@ -67,7 +67,7 @@ new_data_ids as (
     -- build a subset of _airbyte_unique_key from rows that are new
     select distinct
         {{ dbt_utils.surrogate_key([
-            adapter.quote('date_created'),
+            adapter.quote('id'),
         ]) }} as _airbyte_unique_key
     from new_data
 ),
