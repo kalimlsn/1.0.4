@@ -13,7 +13,6 @@ select
     {{ adapter.quote('name') }} as title,
     date_created,
     date_modified,
-    type,
     status,
     description,
     tags,
