@@ -8,7 +8,7 @@
 -- depends_on: {{ ref('products_scd') }}
 select
     _airbyte_unique_key,
-    {{ adapter.quote('id') }},
+   'EMP' + {{ adapter.quote('id') }},
     sku,
     {{ adapter.quote('name') }} as title,
     date_created,
