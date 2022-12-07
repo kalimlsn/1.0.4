@@ -8,7 +8,8 @@
 -- depends_on: {{ ref('products_scd') }}
 select
     _airbyte_unique_key,
-    CONCAT(_links, '-', {{ adapter.quote('id') }} ) AS id,
+--     CONCAT(_links, '-', {{ adapter.quote('id') }} ) AS id,
+    json_extract(_links, '$.collection[0]['href']') AS id,
     sku,
     {{ adapter.quote('name') }} as title,
     date_created,
