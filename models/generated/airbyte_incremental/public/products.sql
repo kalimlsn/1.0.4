@@ -10,7 +10,7 @@ select
     _airbyte_unique_key,
 --     CONCAT(_links, '-', {{ adapter.quote('id') }} ) AS id,
 --     json_extract(_links, '$.collection[0]') AS id,
-json_array_elements(_links -> 'self'->0)->href AS id,
+   _links -> 'self'->0->href AS id,
     sku,
     {{ adapter.quote('name') }} as title,
     date_created,
