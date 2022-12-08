@@ -8,7 +8,7 @@
 -- depends_on: {{ ref('products_ab2') }}
 select
     {{ dbt_utils.surrogate_key([
-      object_to_string('id') ,
+      object_to_string(adapter.quote('id')) ,
         'sku',
         adapter.quote('name'),
         'slug',
