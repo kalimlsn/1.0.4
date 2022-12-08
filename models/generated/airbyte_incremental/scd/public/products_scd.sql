@@ -104,9 +104,9 @@ scd_data as (
       {{ dbt_utils.surrogate_key([
       adapter.quote('id'),
       ]) }} as _airbyte_unique_key,
-       adapter.quote('id'),
-      sku,
       {{ adapter.quote('id') }},
+      sku,
+      {{ adapter.quote('name') }},
       slug,
       tags,
       price,
@@ -215,7 +215,7 @@ select
     _airbyte_unique_key_scd,
     {{ adapter.quote('id') }},
     sku,
-    {{ adapter.quote('id') }},
+    {{ adapter.quote('name') }},
     slug,
     tags,
     price,
@@ -288,4 +288,3 @@ select
     {{ current_timestamp() }} as _airbyte_normalized_at,
     _airbyte_products_hashid
 from dedup_data where _airbyte_row_num = 1
-
