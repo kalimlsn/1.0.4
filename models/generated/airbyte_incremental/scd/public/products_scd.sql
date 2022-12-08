@@ -215,7 +215,7 @@ select
     _airbyte_unique_key_scd,
     {{ adapter.quote('id') }},
     sku,
-    {{ adapter.quote('name') }},
+    {{ adapter.quote('id') }},
     slug,
     tags,
     price,
