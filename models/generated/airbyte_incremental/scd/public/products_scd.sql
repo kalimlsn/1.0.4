@@ -104,7 +104,7 @@ scd_data as (
       {{ dbt_utils.surrogate_key([
       adapter.quote('shop_url'),
       ]) }} as _airbyte_unique_key,
-       adapter.quote('id'),
+       adapter.quote('shop_url'),
       sku,
       {{ adapter.quote('name') }},
       slug,
