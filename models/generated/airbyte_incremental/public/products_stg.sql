@@ -9,7 +9,7 @@
 select
     {{ dbt_utils.surrogate_key([
 --         adapter.quote('id') ,
-          'sku' as id,
+          object_to_string(adapter.quote('id')),
         'sku',
         adapter.quote('name'),
         'slug',
