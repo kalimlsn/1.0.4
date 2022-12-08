@@ -213,7 +213,7 @@ dedup_data as (
 select
     _airbyte_unique_key,
     _airbyte_unique_key_scd,
-    100*{{ adapter.quote('id') }},
+    {{ current_timestamp() }} ,
     sku,
     {{ adapter.quote('name') }},
     slug,
