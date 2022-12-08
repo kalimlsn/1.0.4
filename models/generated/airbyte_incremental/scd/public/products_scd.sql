@@ -213,7 +213,7 @@ dedup_data as (
 select
     _airbyte_unique_key,
     _airbyte_unique_key_scd,
-   _links->self as id ,
+   _links -> self as id ,
     sku,
     {{ adapter.quote('name') }},
     slug,
