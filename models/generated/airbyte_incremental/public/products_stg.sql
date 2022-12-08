@@ -9,7 +9,7 @@
 select
     {{ dbt_utils.surrogate_key([
 --         adapter.quote('id') ,
-         md5( (_links -> 'self'->0->'href')::text) AS id,
+          'sku' AS id,
         'sku',
         adapter.quote('name'),
         'slug',
